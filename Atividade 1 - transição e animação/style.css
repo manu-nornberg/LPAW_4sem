@@ -1,0 +1,21 @@
+* {
+    background-color: #f4d8fa;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group{
+    align-items: center;
+    
+}
+
+.input-group #login, #password{
+    display: block;
+    outline: 0;
+}
+
