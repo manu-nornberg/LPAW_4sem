@@ -1,0 +1,25 @@
+.circulo{
+    align-items:center;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: #f4d8fa 20px solid;
+    border-bottom: rgb(158, 109, 170) 20px solid;
+    animation-play-state: running;
+    animation-name: loading;
+    animation-duration: 0.5s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+    0%,100%{ transform: rotate(0deg);}
+    15%{ transform: rotate(45deg);}
+    25%{ transform: rotate(90deg);}
+    35%{ transform: rotate(120deg);}
+    50%{ transform: rotate(180deg);}
+    65%{ transform: rotate(220deg);}
+    75%{ transform: rotate(270deg);}
+}
