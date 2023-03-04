@@ -1,0 +1,51 @@
+* {
+    background-color: #f4d8fa;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 200px;
+    margin: 0 auto;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    
+}
+
+.button-group{
+    color: gray;
+    padding: 5px;
+}
+
+label{
+   
+}
+
+
+/* -------------------------INPUT---------------------------- */
+input{
+    padding: 5px;
+    outline: 0;
+    border:none;
+    border-bottom: 2px #000000 solid;
+    text-align: center;
+}
+/* -------------------------BOTAOZINHO---------------------------- */
+button{
+    padding: 8px;
+}
+
+button:active{
+    transform: scale(.95);
+}
+
+
