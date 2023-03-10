@@ -5,25 +5,22 @@
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    /* box-shadow: 1px 1px 9px #000000; */
     border: #f4d8fa 20px solid;
     border-bottom: rgb(158, 109, 170) 20px solid;
+    animation-name: loading;
+    animation-duration: 0.5s;
     animation-play-state:paused;
+    animation-iteration-count: infinite;
 }
 
 .circulo:hover{
     animation-play-state:running;
-    animation-name: loading;
-    animation-duration: 0.5s;
-    animation-timing-function: step-end;
-    animation-iteration-count: infinite;
+    /* animation-timing-function: step-end; */
 }
 
 @keyframes loading {
-    0%,100%{ transform: rotate(0deg);}
-    15%{ transform: rotate(45deg);}
-    25%{ transform: rotate(90deg);}
-    35%{ transform: rotate(120deg);}
-    50%{ transform: rotate(180deg);}
-    65%{ transform: rotate(220deg);}
-    75%{ transform: rotate(270deg);}
+    to{
+        transform: rotate(360deg);
+    }
 }
