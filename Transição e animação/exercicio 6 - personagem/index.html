@@ -1,93 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 6</title>
 </head>
+
 <body>
-     <!-- <div></div> -->
-     <div class="walk">
-        <img src="../image/pngwing.com.png" alt="">
-    </div>
+    <!-- <div></div> -->
+        <img class="walk" src="../image/pngwing.com.png" alt="">
+        <img class="walk1" src="../image/pngwing.com.png" alt="">
+        <img class="walk2" src="../image/pngwing.com.png" alt="">
+        <img class="walk3" src="../image/pngwing.com.png" alt="">
+        <img class="walk4" src="../image/pngwing.com.png" alt="">
 </body>
 <style>
-    body{
+    body {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
 
-    div{
-    background-size: 480px 730px;
-    width:160px;
-    height: 180px;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-    background-position: 0px 0px;
+    .walk {
+        width: 170px;
+        height: 240px;
+        position: fixed;
+        object-fit: none;
+        object-position: 0% 0%;
+        animation-name: img-sprite;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: step-end;
+        opacity: 0;
+    }
+
+    @keyframes img-sprite {
+
+        0% {
+            opacity: 1;
+            object-position: 0% 0%;
+            transform: translateY(0px);
+        }
+
+        15% {
+            object-position: 100% 0%;
+            transform: translateY(15px);
+        }
+
+        25% {
+            object-position: 0% 0%;
+            transform: translateY(25px);
+        }
+
+        35% {
+            object-position: 34% 0%;
+            transform: translateY(35px);
+        }
+
+        45% {
+            object-position: 0% 0%;
+            transform: translateY(45px);
+        }
+
+        55% {
+            object-position: 100% 0%;
+            transform: translateY(55px);
+        }
+
+        65% {
+            object-position: 0% 0%;
+            transform: translateY(65px);
+        }
+
+        75% {
+            object-position: 34% 0%;
+            transform: translateY(75px);
+        }
+
+        85% {
+            object-position: 0% 0%;
+            transform: translateY(85px);
+        }
+
+        95% {
+            object-position: 100% 0%;
+            transform: translateY(95px);
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .walk1 {
+        width: 170px;
+        height: 240px;
+        position: fixed;
+        object-fit: none;
+        object-position: 0% 68%;
+        animation-name: img-sprite1;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: step-end;
+        opacity: 0;
+    }
+
+    @keyframes img-sprite1 {
+
+        0% {
+            opacity: 1;
+            object-position: 0% 68%;
+            transform: translateY(95px);
+        }
+
+        25% {
+            object-position: 34% 68%;
+            transform: translate(25px,95px);
+        }
+
+        35% {
+            object-position: 0% 68%;
+            transform: translate(45px,95px);
+        }
+
+        45% {
+            object-position: 100% 68%;
+            transform: translate(65px,95px);
+        }
+
+        55% {
+            object-position: 0% 68%;
+            transform: translate(85px,95px);
+        }
+
+        65% {
+            object-position: 34% 68%;
+            transform: translate(105px,95px);
+        }
+
+        75% {
+            object-position: 0% 68%;
+            transform: translate(125px,95px);
+        }
+
+        85% {
+            object-position: 100% 68%;
+            transform: translate(145px,95px);
+        }
+
+        95% {
+            object-position: 0% 68%;
+            transform: translate(165px,95px);
+        }
+
+        100% {
+            opacity: 0;
+        } 
+    }
+
+    .walk2 {
+        width: 170px;
+        height: 240px;
+        position: fixed;
+        object-fit: none;
+        object-position: 0% 100%;
+        animation-name: img-sprite2;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-iteration-count: 1;
+        animation-timing-function: step-end;
+        opacity: 0;
+    }
+
+    @keyframes img-sprite2 {
+
+        0% {
+            opacity: 1;
+            object-position: 0% 100%;
+            transform: translate(165px,95px);
+        }
+
+        25% {
+            object-position: 35% 100%;
+            transform: translate(165px,75px);
+        }
+
+        35% {
+            object-position: 0% 100%;
+            transform: translate(165px,60px);
+        }
+
+        45% {
+            object-position: 100% 100%;
+            transform: translate(165px,45px);
+        }
+
+        55% {
+            object-position: 0% 100%;
+            transform: translate(165px,35px);
+        }
+
+        65% {
+            object-position: 35% 100%;
+            transform: translate(165px,25px);
+        }
+
+        75% {
+            object-position: 100% 100%;
+            transform: translate(165px,15px);
+        }
+
+        85% {
+            object-position: 0% 100%;
+            transform: translate(165px,10px);
+        }
+
+        95% {
+            object-position: 35% 100%;
+            transform: translate(165px,0px);
+        }
+
+        100% {
+            opacity: 0;
+        }  
+    }
+
+    .walk3 {
+        width: 170px;
+        height: 240px;
+        position: fixed;
+        object-fit: none;
+        object-position: 0% 35%;
+        animation-name: img-sprite3;
+        animation-duration: 1s;
+        animation-delay: 3s;
+        animation-iteration-count: 1;
+        animation-timing-function: step-end;
+        opacity: 0;
+    }
+
+    @keyframes img-sprite3 {
+
+        0% {
+            opacity: 1;
+            object-position: 0% 35%;
+            transform: translate(165px,0px);
+        }
+
+        25% {
+            object-position: 100% 35%;
+            transform: translate(145px,0px);
+        }
+
+        35% {
+            object-position: 0% 35%;
+            transform: translate(125px,0px);
+        }
+
+        45% {
+            object-position: 33% 35%;
+            transform: translate(105px,0px);
+        }
+
+        55% {
+            object-position: 0% 35%;
+            transform: translate(95px,0px);
+        }
+
+        65% {
+            object-position: 100% 35%;
+            transform: translate(75px,0px);
+        }
+
+        75% {
+            object-position: 0% 35%;
+            transform: translate(55px,0px);
+        }
+
+        85% {
+            object-position: 33% 35%;
+            transform: translate(35px,0px);
+        }
+
+        95% {
+            object-position: 0% 35%;
+            transform: translate(20px,0px);
+        }
+
+        100% {
+            opacity: 0;
+            object-position: 0% 0%;
+            transform: translateY(0px);
+        }   
+    }
+
+    .walk4 {
+        width: 180px;
+        height: 250px;
+        object-fit: none;
+        object-position: 0% 0%;
+        animation-name: img-sprite4;
+        animation-duration: 1s;
+        animation-delay: 4s;
+        animation-iteration-count: 1;
+        animation-timing-function: step-end;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
+
+    @keyframes img-sprite4 {
+
+        0%,100% {
+            opacity: 1;
+            object-position: 0% 0%;
+            transform: translate(0px,0px);
+        } 
+
     
-	animation-name: div-sprite;
-    animation-duration:1000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: step-end;
-} 
-
-    @keyframes div-sprite{
-     0%{
-		background-position: 0px 0px;
-		/* transform: translateY(0px); */
-	}
-     100%{
-		background-position: 170px 0px;
-		/* transform: translateY(2px); */
-	}
-     /* 50%{
-		background-position: -330px 0px;
-		/* transform: translateY(4px); */
-	}
-     /* 75%{
-		background-position: -170px 0px; */
-		/* transform: translateY(8px); */
-	} */
-}
-
-img {
-    width: 160px;
-    height: 180px;
-    object-fit: none;
-    /* object-position: 100% 0%; */
-    
-	animation-name: img-sprite;
-    animation-duration:1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: step-end;
-	animation-play-state: paused;
-  }
-  
-  @keyframes img-sprite{
-      0%,100%{
-		object-position: 0% 67%;
-		transform: translateX(0px);
-	}
-      25%{
-		object-position: 50% 67%;
-		transform: translateX(-25px);
-	}
-      50%{
-		object-position: 100% 67%;
-		transform: translateX(-50px);
-	}
-  }
-
-  .walk:hover img{
-	animation-play-state: running;
-  }
-
-  .walk{
-    border: 2px dotted red;
-  }
+    }
 
 </style>
+
 </html>

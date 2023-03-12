@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 5</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="barra"> </div>
     </div>
-</body>
 <style>
-    .container {
+    .container{
+        height: 50px;
         width: 300px;
-        height: 45px;
-        background-color: #ebdbe7;
-        position: relative;
-        border-radius: 3px;
-        
+        border: 2px solid #a194a1;
     }
-    
-    .barra:hover{
-        height: 100%;
-        border-radius: 3px;
-        animation: progresso 5s infinite;
+    .container::after{
+        content: "";
+        display: block;
+        width: 0px;
+        height: 50px;
         background-color: rgb(158, 109, 170);
+        animation: loading 3s linear paused;
+        animation-fill-mode: forwards;
     }
 
-    @keyframes progresso{
-        0% { width: 0%; } 
-        100% { width: 100%}
+    .container:hover::after{
+        animation-play-state: running;
+    }
+    
+
+    @keyframes loading {
+        to{
+            width: 100%;
+        }
     }
 </style>
+
 </html>
