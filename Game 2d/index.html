@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <div class="total">
+        <h2>Maze Game</h2>
+        <div class="todo">
+            <div class="campo-vidas">
+                <div class="vidas"><p>s2s2s2</p></div>
+                <div class="pontuacao"><p>0000000</p></div>
+            </div>
+            <div class="text">
+                <p1>Pegue todas as bolinhas</p1>
+                <p1>e destrua os inimigos</p1>
+                <p1>Boa Sorte!</p1>
+            </div> 
+            <button type="button" class="botao"> Jogar </button>
+            <button type="button" class="botao"> Personagens </button>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    @font-face {
+        font-family: "Retronoid";
+        src: url(../Game\ 2d/retronoid/Retronoid.ttf);
+    }
+    @font-face {
+        font-family: "Designer";
+        src: url(../Game\ 2d/designer_2/Designer.otf);
+    }
+
+    body{
+        background-image: url(/Game\ 2d/image/pexels-felix-mittermeier-1146134.jpg);
+        /* background-position: center; */
+        margin: 0px;
+    }
+    
+    h2{
+        font-family: "Retronoid";
+        font-size: 80px;
+        background-image: linear-gradient(to bottom, rgb(153, 51, 131), rgb(145, 70, 180), rgb(64, 152, 224));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p{
+        font-family:"Designer";
+        font-size: 20px;
+        color: rgb(36, 0, 30);
+    }
+    
+    p1{
+        font-family:"Designer";
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+    }
+
+    .total{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+
+    .todo{
+        background-color: black;
+        width: 1000px;
+        height: 500px;
+        display: flex;   
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
+        
+    }
+
+    
+    .campo-vidas{
+        background-image: linear-gradient(to bottom, rgb(195, 147, 243), rgb(7, 143, 255), rgb(195, 147, 243));
+        width: 1000px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .vidas{
+        margin-left: 200px;
+    }
+
+    .pontuacao{
+        margin-right: 200px;
+    }
+
+    .text{
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* border:rgb(255, 255, 255); */
+        padding-top: 150px;
+        border-style: dashed;
+        border-radius: 9px;
+        opacity: 0;
+		animation: show-content 3s ease-in 100ms forwards 1;
+    }
+
+    .botao{
+        animation: show-content 3s ease-in 100ms forwards 1;
+        padding: 8px;
+        margin:5px;
+        border-radius:8px;
+        background-image: linear-gradient(to bottom, rgb(195, 147, 243), rgb(7, 143, 255), rgb(195, 147, 243));
+        font-family:"Designer";
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+    }
+
+    .botao:hover{
+        background-image: linear-gradient(to bottom, rgb(205, 7, 255), rgb(195, 147, 243),rgb(205, 7, 255));
+        transition:1s ease, background-image 3s ease, box-shadow 3s linear;
+    }
+
+    .botao:active {
+    transform: scale(0.9);
+}
+
+    @keyframes show-content {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+
+    </style>
