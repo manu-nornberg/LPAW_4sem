@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+    <canvas width="600" height="400">
+        Seu navegador nao suporta isso.
+    </canvas>
+</body>
+<script src="./script.js"></script>
+
+<script>
+
+    //exercicio 1
+    // quad(ctx, 50, 30, 50, 50, 'magenta');
+    // quad(ctx, 120, 30, 50, 50, 'blue', 'red');
+
+    //exercicio 2
+    // circ(ctx, 100, 50, 30, 5, "#f00");
+    // circ(ctx, 200, 50, 40, 10, "#00f", "#0f0");
+
+    //exercicio 3
+    // triEqui(ctx, 100, 10, 80, "#000");
+    // triEqui(ctx, 200, 10, 80, "#0f0", true);
+
+    //exercicio 4
+    // drawStar(ctx, 50, 50, 40, "magenta");
+    // drawStar(ctx, 150, 25, 40, "gray");
+    // drawStar(ctx, 250, 50, 40, "red");
+
+    // // exercicio 5
+    // shield(ctx, canvas.width / 2, canvas.height / 2, 100)
+
+    //exercicio 6
+    // smile(ctx, 100, 100, 50)
+
+    // exercicio 7
+    // writeCenter(ctx, canvas.width, canvas.height, 'centralizado',
+    // '#00f', 50, 'sans', 'bold', 'top')
+
+    // exercicio 8
+    // gradiente(ctx, canvas.width, canvas.height, 'bagulho dificil',
+    // '#fff', 50, 'sans', 'bold', 'top')
+
+    // exercicio 9
+    quad(ctx, 10, 10, canvas.width-10, canvas.height/2, 'darkpurple', "darkpurple");
+    quad(ctx, 10, canvas.height/2, canvas.width-10, canvas.height, 'darkblue', "darkblue");
+    
+    let x = canvas.width/2;
+    let y = canvas.height/2;
+    let r1 = 400;
+    let r2 = 30;
+    
+    // ctx.shadowColor = "white";
+    // ctx.shadowBlur = 12;
+    // ctx.shadowOffsetX = x-300;
+    // ctx.shadowOffsetY = y-200;
+    
+    let grd2 = ctx.createRadialGradient(x, y+400, r1, x, y+10, r2);
+    grd2.addColorStop(1, "white");
+    grd2.addColorStop(.6, "darkblue");
+    ctx.fillStyle = grd2;
+    circ(ctx, x, y+250, 250, 5, "transparent", grd2);
+    // ctx.fillRect(0, 0, 0, 0);
+    ctx.fill();
+    
+    ctx.shadowColor = "yellow";
+    ctx.shadowBlur = 12;
+    ctx.shadowOffsetX = x-300;
+    ctx.shadowOffsetY = y-200;
+    
+    let grd = ctx.createRadialGradient( x, y-80, r1, x, y-80, r2);
+    grd.addColorStop(1, "white");
+    grd.addColorStop(.9, "yellow");
+    ctx.fillStyle = grd;
+    circ(ctx, x, y-80, 60, 5, "transparent", grd);
+    // ctx.fillRect(0, 0, 0, 0);
+    ctx.fill();
+    
+
+</script>
+
+
+</html>
