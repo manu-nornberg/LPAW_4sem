@@ -1,0 +1,18 @@
+/* deixar no meinho */
+body{
+    justify-content: center;
+    display: flex;
+}
+
+/* bordinhas do canvas */
+canvas{
+    border: 1px rgb(0, 0, 0);
+    border-style: solid;
+    background-image: url('../../public/image/neon-grid-background/91657.jpg');
+    background-size: 600px;
+}
+#vidas{
+    font-size: large;
+    color:brown;
+    display: flex;
+}
