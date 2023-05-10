@@ -7,7 +7,7 @@ CANVAS = document.querySelector('canvas')
 ctx = CANVAS.getContext('2d')
 
 const letras = ["田","由","甲","申","甴","电","甶","男","甸","甹","町","画","甼","甽"]
-var frase = "cstsi";
+var frase = "CSTSI";
 frase = frase.split("");
 // console.log(frase)
 const tamanho = 20;
