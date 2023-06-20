@@ -1,6 +1,8 @@
 import * as three from 'three'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { createSkyBox } from './skybox'
 
 //renderização
 const render = new three.WebGL1Renderer({alpha:true})
@@ -17,12 +19,15 @@ const camera = new three.PerspectiveCamera(
 );
 camera.position.z = 5
 
+//orbitcontrol
+const control = new OrbitControls(camera, render.domElement);
+
 //luz
 var luz = new three.AmbientLight(0xffffff, 5);
 scene.add(luz);
 
 //ponto de luz
-var pontoluz = new three.PointLight(0xfffffff, 1);
+var pontoluz = new three.PointLight(0xffffff, 1);
 pontoluz.position.set(10, 10, 0);
 scene.add(pontoluz);
 
@@ -40,46 +45,71 @@ manager.onProgress = function (item, loaded, total) {
 const mtlloader = new MTLLoader(manager);
 const objloader = new OBJLoader();
 
-mtlloader.setPath(path).load(mtl, material)
+mtlloader.setPath(path)
+.load(mtl, (material) =>{
+  material.preload()
+  objloader.setMaterials(material)
+  objloader.setPath(path).load(obj, (object) => {
+  cat = object
+  cat.scale.setScalar(1)
+  cat.position.x = .05
+  cat.rotation.z = 4.6
+  cat.rotation.x = 4.7
+  scene.add(cat)
+  createSkyBox('', 200)
+    .then(sky=> {
+      sky.position.y = 100
+      console.log('sky created')
+      console.log(sky)
+      scene.add(sky)
+      animate()
 
-function material(materials) {
-    materials.preload()
-    objloader.setMaterials(materials)
-    objloader.setPath(path)
-    .load(obj, objetos)
-}
+    })
+  .catch(error => console.log(error));
+  })
+})
 
-function objetos(objeto){
-    cat = objeto
-    cat.position.x = 0
-    cat.position.y = -50
-    cat.position.z = -60
-    // cat.rotation.y = 1
-    cat.rotateY(.58)
-    cat.rotateX(4.7)
-    // cat.scale.setScalar(.5)
-    scene.add(cat)
-    animate()
-  }
+// function material(materials) {
+//     materials.preload()
+//     objloader.setMaterials(materials)
+//     objloader.setPath(path)
+//     .load(obj, objetos)
+// }
+
+// function objetos(objeto){
+//     cat = objeto
+//     cat.position.x = 0
+//     cat.position.y = -50
+//     cat.position.z = -60
+//     // cat.rotation.y = 1
+//     cat.rotateY(.58)
+//     cat.rotateX(4.7)
+//     // cat.scale.setScalar(.5)
+//     scene.add(cat)
+//     animate()
+//   }
 
   let indo = true;
   
   function animate() {
     render.render(scene, camera)
+    // cat.rotation.z += .01
     
     if(indo){
-        camera.position.z -=1
-        cat.rotation.z += .02
+      cat.position.z -=1
 	}else{
-        camera.position.z +=1
+      // cat.rotation.z += .01
+      cat.position.z +=1
 	}
     
-	if(!indo && camera.position.z>100)
+	if(!indo && cat.position.z>90)
 		indo = true
 	
-	if(indo && camera.position.z<10)
+	if(indo && cat.position.z<10)
 		indo = false
 
+    
+    control.update();
     requestAnimationFrame(animate)
   }
 
