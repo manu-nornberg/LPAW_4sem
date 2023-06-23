@@ -30,6 +30,7 @@ const createSkyBoxMaterial = async (filename) => {
     return materialArray;
 }
 
+
 const createSkyBox = async(filename, size) => {
     const skyboxGeo = new BoxGeometry(size, size, size);
     const materials = await createSkyBoxMaterial(filename);
